@@ -1,7 +1,7 @@
 import os 
 from box.exceptions import BoxValueError
-import yaml
 from ensure import ensure_annotations
+import yaml
 from TextSummarizer.logging import logger
 from box import ConfigBox
 from pathlib import Path
@@ -29,7 +29,6 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         logger.error(f"Error occurred while loading yaml file: {path_to_yaml}")
         raise e
     
-
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
     """create a list of directories
@@ -43,7 +42,7 @@ def create_directories(path_to_directories: list, verbose=True):
             logger.info(f"created a directory at: {path}")
             
             
-@ensure_annotations           
+@ensure_annotations
 def get_size(path: Path) -> str:
     """get size in kb"""
     size_in_kb = round(os.path.getsize(path)/1024, 2)
